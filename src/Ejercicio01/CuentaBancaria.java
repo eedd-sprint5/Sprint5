@@ -2,13 +2,13 @@ package Ejercicio01;
 
 public class CuentaBancaria {
 
-    private String titular;
-    private double saldo = 0;
-    private String entidad;
-    private String oficina;
-    private String numCuenta;
-    public static final int min_nombre = 10;
-    public static final int max_nombre = 100;
+    public String titular;
+    public double saldo = 0;
+    public String entidad;
+    public String oficina;
+    public String numCuenta;
+    public static int min_nombre = 10;
+    public static int max_nombre = 100;
 
     public CuentaBancaria(String titular, String entidad, String oficina, String DC, String numCuenta) throws IllegalArgumentException {
         if (titular.length() < min_nombre || titular.length() > max_nombre) {
@@ -47,42 +47,42 @@ public class CuentaBancaria {
     }
 
     public String obtener_titular() {
-        return titular;
+        return getTitular();
     }
 
     public double obtener_saldo() {
-        return saldo;
+        return getSaldo();
     }
 
     public String obtener_entidad() {
-        return entidad;
+        return getEntidad();
     }
 
     public String obtener_oficina() {
-        return oficina;
+        return getOficina();
     }
 
     public String obtener_numCuenta() {
-        return numCuenta;
+        return getNumCuenta();
     }
 
     public void cambiar_titular(String titular) {
-        this.titular = titular;
+        this.setTitular(titular);
     }
 
     public void ingresar(double cantidad) throws IllegalArgumentException {
         if (cantidad < 0) {
             throw new IllegalArgumentException("Cantidad de dinero a ingresar no v�lida");
         } else {
-            this.saldo = this.saldo + cantidad;
+            this.setSaldo(this.getSaldo() + cantidad);
         }
     }
 
     public void retirar(double cantidad) throws IllegalArgumentException {
-        if (cantidad > this.saldo) {
+        if (cantidad > this.getSaldo()) {
             throw new IllegalArgumentException("Cantidad de dinero a retirar no v�lida");
         } else {
-            this.saldo = this.saldo - cantidad;
+            this.setSaldo(this.getSaldo() - cantidad);
         }
     }
 
@@ -171,7 +171,105 @@ public class CuentaBancaria {
     }
 
     public String toString(String CCC) {
-        return "Titular: " + this.titular + ", CCC: " + CCC + ", Saldo: " + this.saldo;
+        return "Titular: " + this.getTitular() + ", CCC: " + CCC + ", Saldo: " + this.getSaldo();
+    }
+
+    /**
+     * @return the titular
+     */
+    public String getTitular() {
+        return titular;
+    }
+
+    /**
+     * @param titular the titular to set
+     */
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    /**
+     * @return the saldo
+     */
+    public double getSaldo() {
+        return saldo;
+    }
+
+    /**
+     * @param saldo the saldo to set
+     */
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    /**
+     * @return the entidad
+     */
+    public String getEntidad() {
+        return entidad;
+    }
+
+    /**
+     * @param entidad the entidad to set
+     */
+    public void setEntidad(String entidad) {
+        this.entidad = entidad;
+    }
+
+    /**
+     * @return the oficina
+     */
+    public String getOficina() {
+        return oficina;
+    }
+
+    /**
+     * @param oficina the oficina to set
+     */
+    public void setOficina(String oficina) {
+        this.oficina = oficina;
+    }
+
+    /**
+     * @return the numCuenta
+     */
+    public String getNumCuenta() {
+        return numCuenta;
+    }
+
+    /**
+     * @param numCuenta the numCuenta to set
+     */
+    public void setNumCuenta(String numCuenta) {
+        this.numCuenta = numCuenta;
+    }
+
+    /**
+     * @return the min_nombre
+     */
+    public static int getMin_nombre() {
+        return min_nombre;
+    }
+
+    /**
+     * @param aMin_nombre the min_nombre to set
+     */
+    public static void setMin_nombre(int aMin_nombre) {
+        min_nombre = aMin_nombre;
+    }
+
+    /**
+     * @return the max_nombre
+     */
+    public static int getMax_nombre() {
+        return max_nombre;
+    }
+
+    /**
+     * @param aMax_nombre the max_nombre to set
+     */
+    public static void setMax_nombre(int aMax_nombre) {
+        max_nombre = aMax_nombre;
     }
 
 }
