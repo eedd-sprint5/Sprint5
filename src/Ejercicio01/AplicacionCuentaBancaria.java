@@ -34,14 +34,7 @@ public class AplicacionCuentaBancaria {
             CCC = sc.nextLine();
 
             if (CCC.length() < 20) {
-                System.out.println("N�mero de C�digo Cuenta Cliente no v�lido");
-                System.out.println("El CCC debe estar formado por:");
-                System.out.println("4 d�gitos de entidad");
-                System.out.println("4 d�gitos de oficina");
-                System.out.println("2 d�gitos de control");
-                System.out.println("10 d�gitos de codigo de cuenta");
-                System.out.println("Revise que contenga todo eso");
-                System.out.println("");
+                imprimirMenu();
             }
 
         } while (CCC.length() != 20);
@@ -156,6 +149,17 @@ public class AplicacionCuentaBancaria {
             System.out.println("");
 
         } while (o != 10);
+    }
+
+    private static void imprimirMenu() {
+        System.out.println("N�mero de C�digo Cuenta Cliente no v�lido");
+        System.out.println("El CCC debe estar formado por:");
+        System.out.println("4 d�gitos de entidad");
+        System.out.println("4 d�gitos de oficina");
+        System.out.println("2 d�gitos de control");
+        System.out.println("10 d�gitos de codigo de cuenta");
+        System.out.println("Revise que contenga todo eso");
+        System.out.println("");
     }
 
 }
