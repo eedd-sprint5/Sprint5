@@ -2,8 +2,16 @@ package Ejercicio01;
 
 import java.util.Scanner;
 
+/**
+ *
+ * @author Balta
+ */
 public class AplicacionCuentaBancaria {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

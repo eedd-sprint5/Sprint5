@@ -1,5 +1,9 @@
 package Ejercicio01;
 
+/**
+ *
+ * @author Balta
+ */
 public class CuentaBancaria {
 
     private String titular;
@@ -7,9 +11,26 @@ public class CuentaBancaria {
     private String entidad;
     private String oficina;
     private String numCuenta;
+
+    /**
+     *
+     */
     public static final int min_nombre = 10;
+
+    /**
+     *
+     */
     public static final int max_nombre = 100;
 
+    /**
+     *
+     * @param titular
+     * @param entidad
+     * @param oficina
+     * @param DC
+     * @param numCuenta
+     * @throws IllegalArgumentException
+     */
     public CuentaBancaria(String titular, String entidad, String oficina, String DC, String numCuenta) throws IllegalArgumentException {
         if (titular.length() < min_nombre || titular.length() > max_nombre) {
             throw new IllegalArgumentException("Nombre de titular no v�lido");
@@ -40,36 +61,70 @@ public class CuentaBancaria {
         }
     }
 
+    /**
+     *
+     * @param titular
+     * @param CCC
+     */
     public CuentaBancaria(String titular, String CCC) {
 
         this(titular, CCC.substring(0, 4), CCC.substring(4, 8), CCC.substring(8, 10), CCC.substring(10, 20));
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String obtener_titular() {
         return titular;
     }
 
+    /**
+     *
+     * @return
+     */
     public double obtener_saldo() {
         return saldo;
     }
 
+    /**
+     *
+     * @return
+     */
     public String obtener_entidad() {
         return entidad;
     }
 
+    /**
+     *
+     * @return
+     */
     public String obtener_oficina() {
         return oficina;
     }
 
+    /**
+     *
+     * @return
+     */
     public String obtener_numCuenta() {
         return numCuenta;
     }
 
+    /**
+     *
+     * @param titular
+     */
     public void cambiar_titular(String titular) {
         this.titular = titular;
     }
 
+    /**
+     *
+     * @param cantidad
+     * @throws IllegalArgumentException
+     */
     public void ingresar(double cantidad) throws IllegalArgumentException {
         if (cantidad < 0) {
             throw new IllegalArgumentException("Cantidad de dinero a ingresar no v�lida");
@@ -78,6 +133,11 @@ public class CuentaBancaria {
         }
     }
 
+    /**
+     *
+     * @param cantidad
+     * @throws IllegalArgumentException
+     */
     public void retirar(double cantidad) throws IllegalArgumentException {
         if (cantidad > this.saldo) {
             throw new IllegalArgumentException("Cantidad de dinero a retirar no v�lida");
@@ -86,6 +146,11 @@ public class CuentaBancaria {
         }
     }
 
+    /**
+     *
+     * @param CCC
+     * @return
+     */
     public static boolean comprobarCCC(String CCC) {
 
         boolean c = false;
@@ -131,6 +196,11 @@ public class CuentaBancaria {
         return c;
     }
 
+    /**
+     *
+     * @param CCC
+     * @return
+     */
     public static String calcularCCC(String CCC) {
 
         int total1;
@@ -170,6 +240,11 @@ public class CuentaBancaria {
 
     }
 
+    /**
+     *
+     * @param CCC
+     * @return
+     */
     public String toString(String CCC) {
         return "Titular: " + this.titular + ", CCC: " + CCC + ", Saldo: " + this.saldo;
     }
