@@ -1,7 +1,15 @@
 package Ejercicio01;
 
+/**
+ *
+ * @author Balta
+ */
 public class prueba {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String NSS = "22 88888888 22";
 
