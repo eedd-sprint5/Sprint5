@@ -116,8 +116,8 @@ public class CuentaBancaria {
      *
      * @param titular
      */
-    public void cambiar_titular(String titular) {
-        this.titular = titular;
+    public void cambiar_titular(String titular, String titular1) {
+        this.titular = titular1;
     }
 
     /**
