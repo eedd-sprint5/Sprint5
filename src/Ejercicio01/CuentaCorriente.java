@@ -4,7 +4,7 @@ package Ejercicio01;
  *
  * @author Balta
  */
-public class CuentaBancaria {
+public class CuentaCorriente {
 
     private String titular;
     private double saldo = 0;
@@ -24,18 +24,18 @@ public class CuentaBancaria {
 
     /**
      *
-     * @param titular
+     * @param cliente
      * @param entidad
      * @param oficina
      * @param DC
      * @param numCuenta
      * @throws IllegalArgumentException
      */
-    public CuentaBancaria(String titular, String entidad, String oficina, String DC, String numCuenta) throws IllegalArgumentException {
-        if (titular.length() < min_nombre || titular.length() > max_nombre) {
+    public CuentaCorriente(String cliente, String entidad, String oficina, String DC, String numCuenta) throws IllegalArgumentException {
+        if (cliente.length() < min_nombre || cliente.length() > max_nombre) {
             throw new IllegalArgumentException("Nombre de titular no v�lido");
         } else {
-            this.titular = titular;
+            this.titular = cliente;
         }
 
         if (entidad.length() > 4) {
@@ -66,7 +66,7 @@ public class CuentaBancaria {
      * @param titular
      * @param CCC
      */
-    public CuentaBancaria(String titular, String CCC) {
+    public CuentaCorriente(String titular, String CCC) {
 
         this(titular, CCC.substring(0, 4), CCC.substring(4, 8), CCC.substring(8, 10), CCC.substring(10, 20));
 
@@ -125,7 +125,7 @@ public class CuentaBancaria {
      * @param cantidad
      * @throws IllegalArgumentException
      */
-    public void ingresar(double cantidad) throws IllegalArgumentException {
+    public void hacerIngreso(double cantidad) throws IllegalArgumentException {
         if (cantidad < 0) {
             throw new IllegalArgumentException("Cantidad de dinero a ingresar no v�lida");
         } else {

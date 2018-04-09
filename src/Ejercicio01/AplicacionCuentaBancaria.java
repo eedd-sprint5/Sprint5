@@ -46,7 +46,7 @@ public class AplicacionCuentaBancaria {
 
         } while (CCC.length() != 20);
 
-        CuentaBancaria cb1 = new CuentaBancaria(titular, CCC);
+        CuentaCorriente cb1 = new CuentaCorriente(titular, CCC);
 
         double cantidad;
 
@@ -109,7 +109,7 @@ public class AplicacionCuentaBancaria {
                         System.out.println("Indica la cantidad de dinero a ingresar: ");
                         cantidad = sc.nextDouble();
 
-                        cb1.ingresar(cantidad);
+                        cb1.hacerIngreso(cantidad);
 
                         System.out.println("El saldo actual es de " + cb1.obtener_saldo());
                         cantidad = 0;
