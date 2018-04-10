@@ -4,23 +4,8 @@ package Ejercicio01;
  *
  * @author Balta
  */
-public class CuentaCorriente {
+public class CuentaCorriente extends CuentaBancaria {
 
-    private String titular;
-    private double saldo = 0;
-    private String entidad;
-    private String oficina;
-    private String numCuenta;
-
-    /**
-     *
-     */
-    public static final int min_nombre = 10;
-
-    /**
-     *
-     */
-    public static final int max_nombre = 100;
 
     /**
      *
@@ -247,6 +232,20 @@ public class CuentaCorriente {
      */
     public String toString(String CCC) {
         return "Titular: " + this.titular + ", CCC: " + CCC + ", Saldo: " + this.saldo;
+    }
+
+    /**
+     * @return the min_nombre
+     */
+    public static int getMin_nombre() {
+        return min_nombre;
+    }
+
+    /**
+     * @return the max_nombre
+     */
+    public static int getMax_nombre() {
+        return max_nombre;
     }
 
 }
